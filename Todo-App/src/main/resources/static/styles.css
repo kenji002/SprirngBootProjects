@@ -1,0 +1,18 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.todo-card {
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.task-item {
+    transition: background-color 0.2s;
+}
+
+.task-item:hover {
+    background-color: #f1f3f5;
+}
