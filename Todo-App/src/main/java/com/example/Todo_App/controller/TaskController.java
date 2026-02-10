@@ -31,4 +31,30 @@ public class TaskController {
         taskService.createTask(title);
         return "redirect:/tasks";
     }
+
+    @GetMapping("/{id}")
+    public String getTask(@PathVariable Long id, Model model) {
+        Task task = taskService.getTaskById(id);
+        model.addAttribute("task", task);
+        return "index";
+    }
+
+    @GetMapping("{id}/delete")
+    public String deleteTask(@PathVariable Long id) {
+        taskService.deleteTask(id);
+        return "redirect:/tasks";
+    }
+
+    @GetMapping("/{id}/update")
+    public String updateTask(@PathVariable Long id, @RequestParam("title") String title) {
+        taskService.updateTask(id, title);
+        return "redirect:/tasks";
+    }
+
+    @GetMapping("{id}/toggle")
+    public String toggleTask(@PathVariable Long id) {
+        taskService.toggleTask(id);
+        return "redirect:/tasks";
+    }
+
 }
