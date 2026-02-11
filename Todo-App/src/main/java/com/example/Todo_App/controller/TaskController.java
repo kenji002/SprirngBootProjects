@@ -40,19 +40,19 @@ public class TaskController {
     }
 
     @GetMapping("{id}/delete")
-    public String deleteTask(@PathVariable Long id) {
+    public String deleteTask(@PathVariable("id") Long id) {
         taskService.deleteTask(id);
         return "redirect:/tasks";
     }
 
     @GetMapping("/{id}/update")
-    public String updateTask(@PathVariable Long id, @RequestParam("title") String title) {
+    public String updateTask(@PathVariable("id") Long id, @RequestParam("title") String title) {
         taskService.updateTask(id, title);
         return "redirect:/tasks";
     }
 
     @GetMapping("{id}/toggle")
-    public String toggleTask(@PathVariable Long id) {
+    public String toggleTask(@PathVariable("id") Long id) {
         taskService.toggleTask(id);
         return "redirect:/tasks";
     }
