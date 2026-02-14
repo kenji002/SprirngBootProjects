@@ -8,8 +8,4 @@ import lombok.NoArgsConstructor;
 public class Vote {
     private Long pollId;
     private int optionIndex;
-
-    public Object getPollId() {
-        return null;
-    }
 }

@@ -1,4 +1,4 @@
-# StirngBootProjects
+# SpringBootProjects
 
 本リポジトリは、Spring Boot を用いて作成した学習用プロジェクトです。
 
@@ -7,3 +7,6 @@
 
 ## Todoアプリ
 ![Todoアプリ](/Todo-App/images/Todo-App.png)
+
+## Chatアプリ
+![Chatアプリ](/Chat-App/images/Chat-App.png)
