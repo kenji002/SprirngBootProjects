@@ -25,3 +25,15 @@
 - Description: ユーザーがアンケートに投票する
 - Request Body: Poll ID and Option
 - Response: 204 No Content - 投票が正常に処理されました。
+
+## ポート使用の競合
+
+1. 実行中のタスク確認
+```
+netstat -ano | findstr :8080
+```
+
+2. タスクの終了
+```
+taskkill /PID /F [タスク番号]
+```
