@@ -3,6 +3,7 @@ package com.example.votingapp.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,10 +15,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity
-@Table(name = "polls")
+@Table(name = "voting_app")
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class Poll {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +26,9 @@ public class Poll {
     private String question;
 
     @ElementCollection
-    private List<String> options = new ArrayList<>();
+    @CollectionTable(name = "poll_options")
+    private List<OptionVote> options = new ArrayList<>();
 
-    @ElementCollection
-    private List<Long> votes = new ArrayList<>();
+    // @ElementCollection
+    // private List<Long> votes = new ArrayList<>();
 }
