@@ -1,15 +1,65 @@
 # SpringBootProjects
 
-本リポジトリは、Spring Boot を用いて作成した学習用プロジェクトです。
+本リポジトリは、Spring Boot を中心とした学習用プロジェクトのコレクションです。
+マイクロサービスやフルスタック開発の構成を学習するために、複数のアプリケーションを管理しています。
 
-現在は Todo アプリを中心に実装中です。
-今後、用途ごとにアプリケーションを追加していく予定です。
+---
 
-## Todoアプリ
-![Todoアプリ](/Todo-App/images/Todo-App.png)
+## 🚀 プロジェクト一覧
 
-## Chatアプリ
-![Chatアプリ](/Chat-App/images/Chat-App.png)
+### 1. Todoアプリ ([Todo-App](./Todo-App))
 
-## アンケートアプリ
-![アンケートアプリ](Voting-App/image/Voting-App.png)
+シンプルなタスク管理アプリケーションです。
+
+- **主な機能**: タスクの登録、一覧表示、完了、削除。
+- **技術スタック**:
+  - **Backend**: Spring Boot 3.5, Spring Data JPA
+  - **Frontend**: Thymeleaf, Bootstrap 5
+  - **Database**: MySQL
+- **イメージ**:
+  ![Todoアプリ](Todo-App/images/Todo-App.png)
+
+---
+
+### 2. Chatアプリ ([Chat-App](./Chat-App))
+
+WebSocket を使用したリアルタイムチャットアプリケーションです。
+
+- **主な機能**: ユーザー間のリアルタイムメッセージ送受信。
+- **技術スタック**:
+  - **Backend**: Spring Boot 3.5, Spring WebSocket (STOMP)
+  - **Frontend**: Thymeleaf, Bootstrap 5, SockJS
+- **イメージ**:
+  ![Chatアプリ](Chat-App/images/Chat-App.png)
+
+---
+
+### 3. アンケートアプリ ([Voting-App](./Voting-App))
+
+Angular と Spring Boot を組み合わせたフルスタックな投票システムです。
+
+- **主な機能**: 新しいアンケートの作成（動的な選択肢追加）、リアルタイムな投票、結果のプログレスバー表示。
+- **技術スタック**:
+  - **Backend**: Spring Boot 3.5 (REST API), Spring Data JPA
+  - **Frontend**: Angular 21, Bootstrap 5, Bootstrap Icons
+  - **Database**: MySQL
+- **イメージ**:
+  ![アンケートアプリ](Voting-App/image/Voting-App.png)
+
+---
+
+## 🛠 共通のセットアップ
+
+各プロジェクトのディレクトリに移動し、以下の手順で実行可能です。
+
+### Backend (Spring Boot)
+```bash
+./mvnw spring-boot:run
+```
+
+### Frontend (Voting-App のみ)
+```bash
+cd poll-app
+npm install
+npm start
+```
