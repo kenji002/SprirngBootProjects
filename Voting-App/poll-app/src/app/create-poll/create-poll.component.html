@@ -1,0 +1,42 @@
+<div class="create-poll-container">
+    <div class="card create-poll-card">
+        <div class="card-body">
+            <h3 class="card-title text-center mb-4">新しいアンケートを作成</h3>
+
+            <div class="mb-4">
+                <label for="question" class="form-label fw-bold">質問</label>
+                <input type="text" id="question" class="form-control form-control-lg custom-input"
+                    [(ngModel)]="question" placeholder="例: 一番好きなプログラミング言語は？">
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-bold d-flex justify-content-between">
+                    選択肢
+                    <button class="btn btn-sm btn-outline-primary rounded-pill" (click)="addOption()">
+                        <i class="bi bi-plus-lg"></i> 追加
+                    </button>
+                </label>
+                <div class="options-inputs">
+                    @for (option of options; track trackByIndex($index, option)) {
+                    <div class="input-group mb-2 animate-slideIn">
+                        <span class="input-group-text bg-light border-end-0">{{ $index + 1 }}</span>
+                        <input type="text" class="form-control border-start-0 custom-input"
+                            [(ngModel)]="options[$index]" [placeholder]="'選択肢 ' + ($index + 1)">
+                        @if (options.length > 2) {
+                        <button class="btn btn-outline-danger" (click)="removeOption($index)">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                        }
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary btn-lg rounded-pill shadow-sm" (click)="createPoll()">
+                    作成する
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
