@@ -12,4 +12,4 @@
 ![Chatアプリ](/Chat-App/images/Chat-App.png)
 
 ## アンケートアプリ
-![アンケートアプリ](/Poll-App/images/Poll-App.png)
+![アンケートアプリ](Voting-App/image/Voting-App.png)
